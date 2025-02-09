@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Showcase</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .image-container {
+        overflow: hidden;
+        border-radius: 8px;
+        background: #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s;
+      }
+      .image-container:hover img {
+        transform: scale(1.05);
+      }
+      .download-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 15px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .download-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wallpaper Showcase</h1>
+
+    <div class="gallery">
+      <!-- Predefined wallpaper slots for 100 wallpapers -->
+      <!-- Simply upload your images to the "images" folder with corresponding filenames -->
+      
+      <!-- Wallpaper placeholders from 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`
+            <div class="image-container">
+              <img src="images/wallpaper${i}.jpg" alt="Wallpaper ${i}">
+              <a href="images/wallpaper${i}.jpg" download="wallpaper${i}.jpg">
+                <button class="download-btn">Download</button>
+              </a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </body>
+</html>
