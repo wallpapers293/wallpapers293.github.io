@@ -1,0 +1,142 @@
+index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .category-title {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Ultimate Wallpaper Collection</h1>
+  </header>
+  <nav>
+    <a href="#nature">Nature</a>
+    <a href="#animals">Animals</a>
+    <a href="#automotive">Automotive</a>
+    <a href="#neon">Neon</a>
+    <a href="#valentine">Valentine's Day Special</a>
+  </nav>
+
+  <div id="nature">
+    <h2 class="category-title">Nature Wallpapers</h2>
+    <div class="gallery">
+      <!-- Nature wallpapers go here -->
+      <script>
+        fetchImages('nature');
+      </script>
+    </div>
+  </div>
+
+  <div id="animals">
+    <h2 class="category-title">Animal Wallpapers</h2>
+    <div class="gallery">
+      <!-- Animal wallpapers go here -->
+      <script>
+        fetchImages('animals');
+      </script>
+    </div>
+  </div>
+
+  <div id="automotive">
+    <h2 class="category-title">Automotive Wallpapers</h2>
+    <div class="gallery">
+      <!-- Automotive wallpapers go here -->
+      <script>
+        fetchImages('automotive');
+      </script>
+    </div>
+  </div>
+
+  <div id="neon">
+    <h2 class="category-title">Neon Wallpapers</h2>
+    <div class="gallery">
+      <!-- Neon wallpapers go here -->
+      <script>
+        fetchImages('neon');
+      </script>
+    </div>
+  </div>
+
+  <div id="valentine">
+    <h2 class="category-title">Valentine's Day Special Wallpapers</h2>
+    <div class="gallery">
+      <!-- Valentine's Day wallpapers go here -->
+      <script>
+        fetchImages('valentines');
+      </script>
+    </div>
+  </div>
+
+  <script>
+    const categories = ['nature', 'animals', 'automotive', 'neon', 'valentines'];
+
+    function fetchImages(category) {
+      const folderPath = category + '/';
+      for (let i = 1; i <= 80; i++) {
+        const img = document.createElement('img');
+        img.src = folderPath + i + '.jpg';
+        img.alt = category.charAt(0).toUpperCase() + category.slice(1) + ' Wallpaper';
+        img.onerror = () => img.remove(); // Remove broken links
+        document.querySelector(`#${category} .gallery`).appendChild(img);
+      }
+    }
+  </script>
+
+</body>
+</html>
+```
+
+Directory Structure:
+```
+.
+|-- index.html
+|-- nature/        (Nature wallpapers folder)
+|-- animals/       (Animal wallpapers folder)
+|-- automotive/    (Automotive wallpapers folder)
+|-- neon/          (Neon wallpapers folder)
+|-- valentines/    (Valentine's Day wallpapers folder, to be deleted after Feb 15th)
