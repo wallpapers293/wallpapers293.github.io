@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background-color: #333;
+      color: white;
+      padding: 1em 0;
+      margin: 0;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .category {
+      background-color: #ddd;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .category a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery-item {
+      position: relative;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+    .download-button {
+      margin-top: 5px;
+      display: inline-block;
+      background-color: #008CBA;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .download-button:hover {
+      background-color: #005f73;
+    }
+    .info-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #ff9800;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .info-button:hover {
+      background-color: #e68900;
+    }
+    #info-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      border-radius: 8px;
+    }
+    #info-popup p {
+      text-align: left;
+      color: #333;
+    }
+    #close-popup {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      float: right;
+      border-radius: 4px;
+    }
+    #close-popup:hover {
+      background-color: #d32f2f;
+    }
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wallpaper Gallery</h1>
+  <button class="info-button" onclick="showInfo()">How to Apply Wallpaper</button>
+
+  <div id="overlay" onclick="hideInfo()"></div>
+  <div id="info-popup">
+    <button id="close-popup" onclick="hideInfo()">Close</button>
+    <h2>How to Apply Wallpaper</h2>
+    <p><strong>For Android:</strong></p>
+    <ul>
+      <li>Download the wallpaper using the "Download" button.</li>
+      <li>Open your phone's Gallery or Photos app.</li>
+      <li>Select the downloaded wallpaper.</li>
+      <li>Tap the options menu and select "Set as Wallpaper."</li>
+    </ul>
+    <p><strong>For iOS:</strong></p>
+    <ul>
+      <li>Download the wallpaper using the "Download" button.</li>
+      <li>Open the Photos app and select the downloaded wallpaper.</li>
+      <li>Tap the share icon (box with an arrow) and select "Use as Wallpaper."</li>
+      <li>Adjust the position and tap "Set" to apply.</li>
+    </ul>
+  </div>
+
+  <div class="categories">
+    <div class="category"><a href="#nature">Nature</a></div>
+    <div class="category"><a href="#animals">Animals</a></div>
+    <div class="category"><a href="#automotive">Automotive</a></div>
+    <div class="category"><a href="#neon">Neon</a></div>
+    <div class="category"><a href="#love">Love</a></div>
+  </div>
+
+  <div id="nature">
+    <h2>Nature Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`
+            <div class="gallery-item">
+              <img src="nature/wallpaper${i}.jpg" alt="Nature Wallpaper ${i}">
+              <a class="download-button" href="nature/wallpaper${i}.jpg" download="wallpaper${i}.jpg">Download</a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="animals">
+    <h2>Animals Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`
+            <div class="gallery-item">
+              <img src="animals/wallpaper${i}.jpg" alt="Animals Wallpaper ${i}">
+              <a class="download-button" href="animals/wallpaper${i}.jpg" download="wallpaper${i}.jpg">Download</a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="automotive">
+    <h2>Automotive Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`
+            <div class="gallery-item">
+              <img src="automotive/wallpaper${i}.jpg" alt="Automotive Wallpaper ${i}">
+              <a class="download-button" href="automotive/wallpaper${i}.jpg" download="wallpaper${i}.jpg">Download</a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="neon">
+    <h2>Neon Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`
+            <div class="gallery-item">
+              <img src="neon/wallpaper${i}.jpg" alt="Neon Wallpaper ${i}">
+              <a class="download-button" href="neon/wallpaper${i}.jpg" download="wallpaper${i}.jpg">Download</a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="love">
+    <h2>Love Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`
+            <div class="gallery-item">
+              <img src="love/wallpaper${i}.jpg" alt="Love Wallpaper ${i}">
+              <a class="download-button" href="love/wallpaper${i}.jpg" download="wallpaper${i}.jpg">Download</a>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <script>
+    function showInfo() {
+      document.getElementBy
