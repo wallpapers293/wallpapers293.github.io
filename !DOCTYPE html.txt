@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background-color: #333;
+      color: white;
+      padding: 1em 0;
+      margin: 0;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .category {
+      background-color: #ddd;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .category a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <h1>Wallpaper Gallery</h1>
+  <div class="categories">
+    <div class="category"><a href="#nature">Nature</a></div>
+    <div class="category"><a href="#animals">Animals</a></div>
+    <div class="category"><a href="#automotive">Automotive</a></div>
+    <div class="category"><a href="#neon">Neon</a></div>
+    <div class="category"><a href="#love">Love</a></div>
+  </div>
+
+  <div id="nature">
+    <h2>Nature Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`<img src="nature/wallpaper${i}.jpg" alt="Nature Wallpaper ${i}">`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="animals">
+    <h2>Animals Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`<img src="animals/wallpaper${i}.jpg" alt="Animals Wallpaper ${i}">`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="automotive">
+    <h2>Automotive Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`<img src="automotive/wallpaper${i}.jpg" alt="Automotive Wallpaper ${i}">`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="neon">
+    <h2>Neon Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`<img src="neon/wallpaper${i}.jpg" alt="Neon Wallpaper ${i}">`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="love">
+    <h2>Love Wallpapers</h2>
+    <div class="gallery">
+      <script>
+        for (let i = 1; i <= 80; i++) {
+          document.write(`<img src="love/wallpaper${i}.jpg" alt="Love Wallpaper ${i}">`);
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
